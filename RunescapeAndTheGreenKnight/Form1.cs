@@ -17,7 +17,7 @@ namespace RunescapeAndTheGreenKnight
         public Form1()
         {
             InitializeComponent();
-            f2 = new Form2();
+            f2 = new Form2(this);
         }
         private void start_Click(object sender, EventArgs e)
         {

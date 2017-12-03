@@ -12,11 +12,13 @@ namespace RunescapeAndTheGreenKnight
 {
     public partial class Form2 : Form
     {
+        Form fuckmedaddy;
         static int Section = 0;
-        public Form2()
+        public Form2(Form papi)
         {
             InitializeComponent();
             LoadSection();
+            fuckmedaddy = papi;
         }
         private void LoadSection()
         {

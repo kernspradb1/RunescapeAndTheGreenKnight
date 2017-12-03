@@ -15,11 +15,6 @@ namespace RunescapeAndTheGreenKnight
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-        //critical program function below
-        public static void newform()
-        {
-            Application.Run(new Form2());
-        }
 
     }
 }

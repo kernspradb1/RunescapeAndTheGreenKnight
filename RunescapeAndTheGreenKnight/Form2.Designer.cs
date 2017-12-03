@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+            fuckmedaddy.Close();
             base.Dispose(disposing);
         }
 
