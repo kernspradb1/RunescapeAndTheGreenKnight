@@ -9,11 +9,17 @@ namespace RunescapeAndTheGreenKnight
     static class Program
     {
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        //critical program function below
+        public static void newform()
+        {
+            Application.Run(new Form2());
+        }
+
     }
 }
