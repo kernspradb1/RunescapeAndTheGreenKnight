@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,72 +18,69 @@ namespace RunescapeAndTheGreenKnight
         public Form1()
         {
             InitializeComponent();
-            LoadSection();
         }
-
         private void start_Click(object sender, EventArgs e)
         {
             label1.Visible = false;
             start.Visible = false;
-
+            LoadSection();
         }
         private void LoadSection()
         {
+            StopVid();
+            video.URL= "./sec" + Section + "q.mp4";
             switch (Section)
             {
                 case 0:
-                    video.URL = "";
                     Option1.Text = "Volunteer yourself in place of the king";
                     Option2.Text = "Let the king play the game";
                     break;
                 case 1:
-                    video.URL = "";
                     Option1.Text = "Leave in search for the castle";
                     Option2.Text = "Stay at the castle for your own safety";
                     break;
                 case 2:
-                    video.URL = "";
                     Option1.Text = "Pray to the gods for help";
                     Option2.Text = "Keep searching";
                     break;
                 case 3:
-                    video.URL = "";
                     Option1.Text = "Accept Bertilak's deal";
                     Option2.Text = "Refuse Bertilak's deal and keep looking";
                     break;
                 case 4:
-                    video.URL = "";
                     Option1.Text = "Accept graciously";
-                    Option2.Text = "Accept eagarly";
+                    Option2.Text = "Refuse";
                     break;
                 case 5:
-                    video.URL = "";
                     Option1.Text = "Accept";
                     Option2.Text = "Decline";
                     break;
                 case 6:
-                    video.URL = "";
                     Option1.Text = "Continue with the Quest";
                     Option2.Text = "Take Grindolet's word and leave";
                     break;
                 case 7:
-                    video.URL = "";
                     Option1.Text = "Get your head chopped off";
                     Option2.Text = "Run away cowardly";
-                    break;  
-
-
+                    break;
             }
         }
         private void LoadDeath()
         {
-            switch (Section)
-            {
-
-            }
+            StopVid();
+            video.URL = "./sec" + Section + "fail.mp4";
+            Option1.Text = "Restart";
+            Option2.Text = "";
+            Section = -1;
+        }
+        private void StopVid()
+        {
+            video.Ctlcontrols.stop();
         }
         private void Option1_Click(object sender, EventArgs e)
         {
+            StopVid();
+            video.URL = "./sec" + Section + "pass.mp4";
             Section++;
             LoadSection();
         }
