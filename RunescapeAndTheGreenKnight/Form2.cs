@@ -13,7 +13,9 @@ namespace RunescapeAndTheGreenKnight
     public partial class Form2 : Form
     {
         Form fuckmedaddy;
+        int x = 1;
         static int Section = 0;
+        List<string> dialouge = new List<string>();
         public Form2(Form papi)
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace RunescapeAndTheGreenKnight
         private void LoadSection()
         {
             StopVid();
-            video.URL = "./sec" + Section + "q.mp4";
+            video.URL = "http://www.tfletch.tech/sggk/sec" + Section + "q.mp4";
+            video.Ctlcontrols.pause();
             switch (Section)
             {
                 case 0:
@@ -60,10 +63,11 @@ namespace RunescapeAndTheGreenKnight
                     break;
             }
         }
+
         private void LoadDeath()
         {
             StopVid();
-            video.URL = "./sec" + Section + "fail.mp4";
+            video.URL = "http://www.tfletch.tech/sggk/sec" + Section + "fail.mp4";
             Option1.Text = "Restart";
             Option2.Text = "";
             Section = -1;
@@ -72,17 +76,31 @@ namespace RunescapeAndTheGreenKnight
         {
             video.Ctlcontrols.stop();
         }
+
         private void Option1_Click(object sender, EventArgs e)
         {
-            StopVid();
-            video.URL = "./sec" + Section + "pass.mp4";
-            Section++;
-            LoadSection();
+            if (x == 1)
+            {
+                StopVid();
+                video.URL = "http://www.tfletch.tech/sggk/sec" + Section + "pass.mp4";
+                Option1.Text = "Continue";
+                Option2.Text = "";
+                x = 0;
+            }
+            else if(x == 0)
+            {
+                x = 1;
+                Section++;
+                LoadSection();
+            }
         }
 
         private void Option2_Click(object sender, EventArgs e)
         {
-            LoadDeath();
+            if (x == 1)
+            {
+                LoadDeath();
+            }
         }
     }
 }
