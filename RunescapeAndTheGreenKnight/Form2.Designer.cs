@@ -90,6 +90,7 @@
             this.Option1.TabIndex = 0;
             this.Option1.Text = "button1";
             this.Option1.UseVisualStyleBackColor = true;
+            this.Option1.Click += new System.EventHandler(this.Option1_Click);
             // 
             // Option2
             // 
@@ -100,6 +101,7 @@
             this.Option2.TabIndex = 1;
             this.Option2.Text = "button2";
             this.Option2.UseVisualStyleBackColor = true;
+            this.Option2.Click += new System.EventHandler(this.Option2_Click);
             // 
             // Form2
             // 

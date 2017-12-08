@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RunescapeAndTheGreenKnight
@@ -67,7 +61,8 @@ namespace RunescapeAndTheGreenKnight
         private void LoadDeath()
         {
             StopVid();
-            video.URL = "http://www.tfletch.tech/sggk/sec" + Section + "fail.mp4";
+            x = 0;
+            video.URL = "http://www.tfletch.tech/sggk/sec" + Section + "f.mp4";
             Option1.Text = "Restart";
             Option2.Text = "";
             Section = -1;
@@ -82,7 +77,7 @@ namespace RunescapeAndTheGreenKnight
             if (x == 1)
             {
                 StopVid();
-                video.URL = "http://www.tfletch.tech/sggk/sec" + Section + "pass.mp4";
+                video.URL = "http://www.tfletch.tech/sggk/sec" + Section + "p.mp4";
                 Option1.Text = "Continue";
                 Option2.Text = "";
                 x = 0;
